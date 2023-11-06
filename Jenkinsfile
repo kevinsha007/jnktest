@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent ecsAgent
 
     stages {
         stage('Build') {
