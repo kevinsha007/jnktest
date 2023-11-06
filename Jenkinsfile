@@ -3,12 +3,18 @@ pipeline {
     agent { node { label 'ecsAgent' } } 
 
     stages {
-        stage('Build') {
+        stage('Checking Flutter') {
+            steps {
+                echo 'Checking Flutter..'
+                sh 'flutter doctor'
+                sh 'flutter clean'
+                sh 'flutter pub get'
+            }
+        }
+        stage('Building') {
             steps {
                 echo 'Building..'
-                sh 'flutter doctor'
-                sh 'rsync --help'
-                sh 'a'
+                sh 'build web'
             }
         }
         stage('Test') {
