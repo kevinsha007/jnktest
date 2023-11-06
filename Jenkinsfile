@@ -8,6 +8,7 @@ pipeline {
                 echo 'Building..'
                 sh 'flutter doctor'
                 sh 'rsync --help'
+                sh 'a'
             }
         }
         stage('Test') {
