@@ -1,5 +1,6 @@
 pipeline {
-    agent ecsAgent
+    
+    agent { node { label 'ecsAgent' } } 
 
     stages {
         stage('Build') {
